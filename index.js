@@ -199,4 +199,109 @@ const ejercicio2 = () => {
 
  };
 
- ejercicio3();
+// ejercicio3();
+
+ function ejercicio4() {
+    let dataPrueba = [1, 2, 3, 4, 5];
+    let dataPrueba2 = [ 4, 5, 6, 7, 8, 9, 10, 13, 15];
+    
+
+    dataPrueba.push(11);
+    console.log(dataPrueba);
+    dataPrueba2.pop();
+    console.log(dataPrueba2);
+    dataPrueba2.shift();
+    console.log(dataPrueba2);
+    dataPrueba2.unshift(4, 5);
+    console.log(dataPrueba2);
+    let bitMult = dataPrueba2.map(multiplo);
+
+    function multiplo(value) {
+        return value*2;
+    }
+    console.log('map ' + bitMult);
+
+    let bitFilter2 = dataPrueba2.filter(filtro);
+
+    function filtro(value) {
+        return value > 8 && value < 12;
+    }
+
+    console.log('filter ' + bitFilter2);
+
+    let bitReduce = dataPrueba2.reduce(reduce);
+
+    function reduce(accumulator, currentValue) {
+        return accumulator + currentValue;
+    }
+
+    console.log('reduce ' + bitReduce);
+
+    let bitFind = dataPrueba2.find(find);
+
+    function find(value) {
+        return value === 10;
+    }
+
+    console.log('find ' + bitFind);
+ }
+
+// ejercicio4();
+
+function ejercicio5() {
+    let numeros = [10, 20, 30, 40, 50];
+    console.log('Array original:', numeros);    
+    // 1. Agregar un número al final del array
+    numeros.push(60);
+    console.log('Array después de agregar un número:', numeros);
+
+    // 2. Eliminar el primer número del array
+    numeros.shift();
+    console.log('Array después de eliminar el primer número:', numeros);
+
+    // 3. Crear un nuevo array con los números multiplicados por x
+    const x = 3;
+    let numerosMultiplicados = numeros.map(numero => numero * x);
+    console.log('Nuevo array con números multiplicados por', x, ':', numerosMultiplicados);
+
+    // 2. Crear un array de edades
+    let edades = [12, 17, 22, 19, 24, 15, 30];
+    console.log('Array de edades:', edades);
+
+    // Organizar los valores del array filtrando las edades mayores de 18
+    let mayoresDe18 = edades.filter(edad => edad > 18);
+    console.log('Edades mayores de 18:', mayoresDe18);
+
+    // Calcular cuantas edades superan los 18
+    let cantidadMayoresDe18 = mayoresDe18.length;
+    console.log('Cantidad de edades mayores de 18:', cantidadMayoresDe18);
+
+    // Agregar una o más edades al final del array
+    edades.push(25, 28);
+    console.log('Array de edades después de agregar nuevas edades:', edades);
+
+    // 3. Ordenar y buscar
+
+    // Crear un array de frutas
+    let frutas = ['Manzana', 'Banano', 'Cereza', 'Durazno', 'Papaya'];
+    console.log('Array original de frutas:', frutas);
+
+    // Ordenar el array de frutas alfabéticamente
+    frutas.sort();
+    console.log('Array de frutas ordenado alfabéticamente:', frutas);
+
+    // Conseguir las frutas que comiencen por la letra C
+    let frutasConC = frutas.filter(fruta => fruta.startsWith('C'));
+    console.log('Frutas que comienzan con la letra C:', frutasConC);
+
+    // Agregar una nueva fruta
+    frutas.push('Borojo');
+    console.log('Array de frutas después de agregar una nueva fruta:', frutas);
+
+    // Filtrar y retornar solamente la nueva fruta que generamos
+    let nuevaFruta = frutas.filter(fruta => fruta === 'Borojo');
+    console.log('Nueva fruta agregada:', nuevaFruta);
+}
+
+
+ejercicio5();
